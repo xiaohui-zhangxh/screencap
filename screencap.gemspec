@@ -19,5 +19,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'phantomjs.rb'
   gem.add_development_dependency 'fastimage'
-  gem.add_runtime_dependency 'phantomjs'
+  gem.add_runtime_dependency 'phantomjs', '~> 2.1.1'
 end
