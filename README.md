@@ -32,6 +32,8 @@ it also currently supports a couple of options
   screenshot = f.fetch(
   	:output => '~/my_directory.png', # don't forget the extension!
   	# optional:
+    :timeout => 12000, # will exit phantomjs 12s later.
+    :userAgent => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13E188a Safari/601.1', # simulate as mobile browser
   	:div => '.header', # selector for a specific element to take screenshot of
   	:width => 1024,
     :height => 768,
