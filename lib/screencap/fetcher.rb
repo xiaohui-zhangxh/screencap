@@ -5,9 +5,12 @@ module Screencap
     end
 
     def fetch(opts = {})
-      @filename = opts.fetch(:output, clean_filename)
-      raster(@url, @filename, opts)
-      fetched_file
+      timeout_ms = opts.fetch(:timeout, nil) || opts.fetch('timeout', nil) || 600_000 # default 10 minutes
+      Timeout::timeout(timeout_ms / 1000) do
+        @filename = opts.fetch(:output, clean_filename)
+        raster(@url, @filename, opts)
+        fetched_file
+      end
     end
 
     def filename
